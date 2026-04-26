@@ -367,6 +367,87 @@ section { padding: 4rem 0; }
 }
 .btn-submit:hover { background: var(--orange-hover); }
 
+/* ══ FORM RGPD checkbox alignment (RULES_TOM #21) ══ */
+/* Garantit que la case et son label "J'accepte la politique" restent
+   sur la même ligne, alignés verticalement, sur les 3 forms (home, contact,
+   prestations, ville, etc.). flex-shrink:0 sur la checkbox empêche le wrap
+   de coller le texte sur la ligne suivante. */
+.form-rgpd {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: .82rem;
+  color: var(--text-mid);
+  line-height: 1.45;
+  cursor: pointer;
+  margin: .4rem 0 .2rem;
+  padding: .25rem 0;
+  grid-column: span 2;
+}
+.form-rgpd input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: var(--orange);
+  cursor: pointer;
+  /* Aligne le centre de la checkbox avec la première ligne du texte */
+  margin-top: 2px;
+}
+.form-rgpd a {
+  color: var(--orange);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.form-rgpd a:hover { color: var(--orange-hover); }
+
+/* ══ FORM SECTION wrapper — utilisé par about/prestations/ville/zone/service.html ══ */
+/* Crée un fond clair avec bordure douce qui contient un form .contact-form
+   "card" centré, pour éviter que le form apparaisse "loose" sur fond gris. */
+.form-section {
+  background: var(--bg);
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+.form-section .contact-form {
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--white);
+  padding: 1.8rem 1.6rem;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 18px rgba(15,29,47,.06);
+  border: 1px solid var(--border-light);
+}
+.form-section .contact-form h3 {
+  grid-column: span 2;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 .15rem;
+  text-align: center;
+}
+.form-section .contact-form .form-sub {
+  grid-column: span 2;
+  font-size: .82rem;
+  color: var(--text-soft);
+  margin: 0 0 .8rem;
+  text-align: center;
+}
+.form-section .contact-form .form-trust {
+  grid-column: span 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .35rem;
+  font-size: .76rem;
+  color: var(--text-soft);
+  margin-top: .25rem;
+}
+.form-section .contact-form .form-trust svg {
+  width: 12px; height: 12px; opacity: .55; flex-shrink: 0;
+}
+
 /* ══ FOOTER ══ */
 footer { background: var(--navy); color: rgba(255,255,255,.45); padding: 3.5rem 0 1.5rem; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.1fr; gap: 2.5rem; align-items: start; }
