@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+Disallow: /merci
+Disallow: /merci?*
+Disallow: /devis?*
+Disallow: /*?service=
+Disallow: /*?ville=
+Disallow: /*?utm_*
+
+Allow: /css/
+Allow: /js/
+Allow: /img/
+Allow: /*.css
+Allow: /*.js
+
+Sitemap: https://platrier-plaquiste-rillieuxlapape69.fr/sitemap.xml
