@@ -131,7 +131,7 @@
     <div class="footer-grid">
       <div class="footer-col"><div class="footer-logo"><div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><span class="logo-name">GFB BATIMENT</span></div><p class="footer-nap">GFB BATIMENT<br>9 rue de Bruxelles<br>69140 Rillieux-la-Pape</p><p class="footer-nap"><a href="tel:+33214739691">02 14 73 96 91</a><br><a href="mailto:contact@platrier-plaquiste-rillieuxlapape69.fr">contact@platrier-plaquiste-rillieuxlapape69.fr</a></p></div>
       <div class="footer-col"><h4>Services</h4><ul><li><a href="/prestations">Dépannage</a></li><li><a href="/prestations">Installation</a></li><li><a href="/prestations">Entretien</a></li></ul></div>
-      <div class="footer-col"><h4>Informations</h4><ul><li><a href="/apropos">À propos</a></li><li><a href="/avis">Avis clients</a></li><li><a href="/realisations">Réalisations</a></li><li><a href="/contact">Contact & devis</a></li></ul></div>
+      <div class="footer-col"><h4>Informations</h4><ul><li><a href="/a-propos">À propos</a></li><li><a href="/avis">Avis clients</a></li><li><a href="/realisations">Réalisations</a></li><li><a href="/contact">Contact & devis</a></li></ul></div>
       <div class="footer-col"><h4>Zone d'intervention</h4><p class="footer-zone-text">Nous intervenons à Rillieux-la-Pape, Lyon, Villeurbanne, Vénissieux et communes environnantes.</p><a href="/zone-intervention" class="footer-zone-link">Voir toutes nos zones <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 6 15 12 9 18"/></svg></a></div>
     </div>
     <div class="footer-bottom"><span>&copy; GFB BATIMENT — Tous droits réservés — Artisan à Rillieux-la-Pape — Site propulsé par <a href="https://atlinker.com" target="_blank" rel="noopener">atlinker</a></span><div class="footer-legal"><a href="/plan-du-site">Plan du site</a><span>•</span><a href="/mentions-legales">Mentions légales</a><span>•</span><a href="/politique-confidentialite">Politique de confidentialité</a></div></div>
@@ -151,9 +151,9 @@
     document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
     document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}})});
     document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',()=>{const a=btn.nextElementSibling;const open=a.classList.contains('open');document.querySelectorAll('.faq-a.open').forEach(el=>{el.classList.remove('open');el.previousElementSibling.classList.remove('open');el.previousElementSibling.setAttribute('aria-expanded','false')});if(!open){a.classList.add('open');btn.classList.add('open');btn.setAttribute('aria-expanded','true')}})});
-    document.querySelectorAll('form').forEach(f=>{f.addEventListener('submit',function(e){e.preventDefault();const msg=document.createElement('div');msg.className='form-success';msg.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="24" height="24"><polyline points="20 6 9 17 4 12"/></svg> Merci ! Réponse sous 24h.';f.style.display='none';f.parentNode.insertBefore(msg,f.nextSibling)})});
+    
   </script>
 
-<script type="module" src="/src/js/form-handler.js"></script>
+<script src="/js/contact-form.js" defer></script>
 </body>
 </html>
