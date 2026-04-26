@@ -208,6 +208,121 @@ section { padding: 4rem 0; }
 }
 .real-body p { font-size: .82rem; color: var(--text-mid); line-height: 1.65; }
 
+/* ══ BENTO GRID — page /realisations (3 cards : 1 large + 2 normaux) ══
+   Identique en logique à .real-* mais layout asymétrique pour la 1ère card
+   (qui occupe 2 colonnes en desktop). Photo en background-image, titres
+   navy, tags orange — pas de bleu souligné par défaut. */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.3rem;
+}
+.bento-card-link {
+  display: block; text-decoration: none; color: inherit;
+}
+.bento-card-link:hover { text-decoration: none; color: inherit; }
+.bento-card-link:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; border-radius: var(--radius-lg); }
+.bento-card {
+  background: var(--white); border-radius: var(--radius-lg); overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,.04);
+  transition: all .3s ease;
+  height: 100%;
+  display: flex; flex-direction: column;
+}
+.bento-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,.08); transform: translateY(-4px); }
+/* La première card (large) occupe 2 colonnes desktop pour layout bento. */
+.bento-card-link:first-of-type .bento-card.large,
+.bento-card.large { grid-column: span 2; }
+.bento-img {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: .5rem; width: 100%; min-height: 220px;
+  background: var(--border-light); color: var(--text-soft); font-size: .78rem;
+}
+.bento-card.large .bento-img { min-height: 320px; }
+.bento-img svg { opacity: .3; }
+.bento-body { padding: 1.2rem 1.4rem; }
+.bento-body h3 {
+  font-size: .98rem; font-weight: 700; color: var(--navy);
+  margin-bottom: .55rem; text-decoration: none;
+}
+.bento-card.large .bento-body h3 { font-size: 1.15rem; }
+.bento-tags { display: flex; gap: .35rem; flex-wrap: wrap; margin-bottom: .6rem; }
+.bento-tag {
+  background: var(--orange-light); color: var(--orange);
+  padding: .2rem .55rem; border-radius: 4px;
+  font-size: .7rem; font-weight: 600;
+}
+.bento-body p { font-size: .82rem; color: var(--text-mid); line-height: 1.65; }
+
+/* La grille bento doit être un parent grid direct des liens .bento-card-link.
+   Avec .bento-card-link englobant, il faut que le grid s'applique aux liens. */
+.bento-grid > .bento-card-link { display: block; }
+.bento-grid > .bento-card-link:has(.bento-card.large) { grid-column: span 2; }
+
+/* ══ PAGE CHANTIER (realisation-template.html) ══ */
+.realisation-detail { background: var(--white); }
+.realisation-hero {
+  position: relative; width: 100%; max-height: 520px; overflow: hidden;
+  background: var(--navy);
+}
+.realisation-hero img {
+  width: 100%; height: 100%; max-height: 520px;
+  object-fit: cover; display: block;
+}
+.realisation-hero .hero-overlay {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 2.2rem 0 1.6rem;
+  background: linear-gradient(to top, rgba(8,16,40,.85) 0%, rgba(8,16,40,.4) 60%, rgba(8,16,40,0) 100%);
+  color: #fff;
+}
+.realisation-hero .hero-tags { display: flex; gap: .45rem; margin-bottom: .8rem; flex-wrap: wrap; }
+.realisation-hero .hero-tags .tag,
+.hero-tags .tag {
+  background: var(--orange); color: #fff;
+  padding: .25rem .7rem; border-radius: 4px;
+  font-size: .72rem; font-weight: 600; letter-spacing: .02em;
+  text-transform: uppercase;
+}
+.realisation-hero h1 {
+  color: #fff; font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700; line-height: 1.2; margin: 0;
+}
+.realisation-content {
+  padding: 3rem 0;
+  max-width: 100%;
+}
+.realisation-content .container { max-width: 760px; }
+.realisation-content .lede {
+  font-size: 1.05rem; color: var(--text-mid); line-height: 1.7;
+  margin-bottom: 2rem; padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-light);
+}
+.realisation-content h2 {
+  font-size: 1.35rem; font-weight: 700; color: var(--navy);
+  margin: 2rem 0 .9rem;
+}
+.realisation-content p {
+  font-size: .95rem; color: var(--text-mid); line-height: 1.75;
+  margin-bottom: 1rem;
+}
+.realisation-content .testimonial {
+  margin: 2.5rem 0; padding: 1.5rem 1.8rem;
+  background: var(--orange-light);
+  border-left: 4px solid var(--orange);
+  border-radius: var(--radius);
+}
+.realisation-content .testimonial p {
+  font-size: 1rem; color: var(--navy); font-style: italic;
+  margin-bottom: .6rem; line-height: 1.7;
+}
+.realisation-content .testimonial footer {
+  font-size: .85rem; color: var(--text-soft); font-weight: 600; font-style: normal;
+}
+.realisation-content .map-embed {
+  margin: 2rem 0; border-radius: 12px; overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,.08);
+}
+
 /* ══ SERVICES ══ */
 .services-section { border-bottom: 1px solid var(--border-light); }
 .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.3rem; }
@@ -547,6 +662,9 @@ footer { background: var(--navy); color: rgba(255,255,255,.45); padding: 3.5rem 
   .hero-grid { grid-template-columns: 1fr; }
   .hero-form-card { margin-top: .5rem; }
   .services-grid, .avis-grid, .real-grid, .why-grid { grid-template-columns: 1fr; max-width: 440px; }
+  /* Bento : 2 cols tablet — la card large garde span 2 (= toute la largeur) */
+  .bento-grid { grid-template-columns: repeat(2, 1fr); }
+  .bento-card.large, .bento-grid > .bento-card-link:has(.bento-card.large) { grid-column: span 2; }
   .zone-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
@@ -646,6 +764,12 @@ iframe { display: block; }
     grid-template-columns: 1fr !important; max-width: 440px; margin-left: auto; margin-right: auto;
   }
   .real-img { min-height: 180px; }
+
+  /* Bento : 1 col mobile, large card = même width que les autres */
+  .bento-grid { grid-template-columns: 1fr !important; max-width: 440px; margin-left: auto; margin-right: auto; }
+  .bento-card.large, .bento-grid > .bento-card-link:has(.bento-card.large) { grid-column: span 1; }
+  .bento-img { min-height: 200px; }
+  .bento-card.large .bento-img { min-height: 220px; }
 
   /* Section padding réduit */
   section { padding: 2.5rem 0; }
