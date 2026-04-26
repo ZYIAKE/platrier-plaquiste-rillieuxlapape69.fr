@@ -30,3 +30,9 @@
 
 /robots.txt
   Cache-Control: public, max-age=86400
+
+# P0-3 SEO — Page 404 propre (Cloudflare Pages sert /404.html avec status 404
+# pour toute URL inconnue automatiquement, MAIS on s'assure que le header
+# Cache-Control est court pour pouvoir l'updater rapidement).
+/404.html
+  Cache-Control: public, max-age=300, must-revalidate
