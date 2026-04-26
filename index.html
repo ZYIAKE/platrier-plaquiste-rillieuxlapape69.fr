@@ -18,7 +18,7 @@
   <link rel="canonical" href="https://platrier-plaquiste-rillieuxlapape69.fr/index.html">
   <link rel="stylesheet" href="style.css">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"GFB BATIMENT","description":"Artisan à Rillieux-la-Pape. Dépannage, installation, entretien. Devis gratuit sous 24h.","telephone":"+33214739691","email":"contact@platrier-plaquiste-rillieuxlapape69.fr","address":{"@type":"PostalAddress","streetAddress":"9 rue de Bruxelles","addressLocality":"Rillieux-la-Pape","postalCode":"69140","addressCountry":"FR"},"priceRange":"€€","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"}]}
+  {"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"GFB BATIMENT","description":"Artisan à Rillieux-la-Pape. Dépannage, installation, entretien. Devis gratuit sous 24h.","telephone":"+33214739691","email":"contact@platrier-plaquiste-rillieuxlapape69.fr","address":{"@type":"PostalAddress","streetAddress":"9 rue de Bruxelles","addressLocality":"Rillieux-la-Pape","postalCode":"69140","addressCountry":"FR"},"priceRange":"€€","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"08:00","closes":"19:00"}]}
   </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-628KRFBC1Y"></script>
 <script>
@@ -44,7 +44,7 @@
         <div class="top-bar-center">
           <div class="top-bar-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            Lun-Ven 8h-18h
+            Lun-Sam 8h-19h
           </div>
           <div class="top-bar-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -60,10 +60,12 @@
   </div>
 
   <!-- ══ NAV ══ -->
+  <!-- RULES_TOM #21 : aucune ancre dans les menus, toutes les nav links pointent
+       vers une page dédiée unique. -->
   <nav role="navigation" aria-label="Navigation principale">
     <div class="container">
       <div class="nav-inner">
-        <a href="index.html" class="logo" aria-label="Accueil">
+        <a href="/" class="logo" aria-label="Accueil">
           <div class="logo-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </div>
@@ -71,12 +73,12 @@
         </a>
         <button class="hamburger" aria-label="Menu" aria-expanded="false"></button>
         <ul class="nav-links" role="menubar">
-          <li role="none"><a href="#services" role="menuitem">Prestations</a></li>
-          <li role="none"><a href="#realisations" role="menuitem">Réalisations</a></li>
-          <li role="none"><a href="#avis" role="menuitem">Avis</a></li>
-          <li role="none"><a href="#zone" role="menuitem">Zones</a></li>
-          <li role="none"><a href="#faq" role="menuitem">FAQ</a></li>
-          <li role="none"><a href="#contact" role="menuitem" class="nav-cta">Devis gratuit</a></li>
+          <li role="none"><a href="/prestations" role="menuitem">Prestations</a></li>
+          <li role="none"><a href="/realisations" role="menuitem">Réalisations</a></li>
+          <li role="none"><a href="/avis" role="menuitem">Avis</a></li>
+          <li role="none"><a href="/zone-intervention" role="menuitem">Zones</a></li>
+          <li role="none"><a href="/a-propos" role="menuitem">À propos</a></li>
+          <li role="none"><a href="/contact" role="menuitem" class="nav-cta">Devis gratuit</a></li>
         </ul>
       </div>
     </div>
@@ -94,7 +96,7 @@
           <h1>Votre artisan de confiance pour <strong>tous vos travaux</strong></h1>
           <p class="hero-desc">Dépannage rapide, installation soignée et entretien régulier. Un interlocuteur unique du devis à la réception du chantier.</p>
           <div class="hero-btns">
-            <a href="#contact" class="btn btn-orange">Obtenir un devis gratuit</a>
+            <a href="/contact" class="btn btn-orange">Obtenir un devis gratuit</a>
             <a href="tel:+33214739691" class="btn btn-ghost">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="16" height="16"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
               Appeler maintenant
@@ -208,48 +210,36 @@
     </div>
   </section>
 
-  <!-- ══ AVIS ══ -->
+  <!-- ══ AVIS GOOGLE — placeholder widget JS dynamique (RULES_TOM #6 et #15) ══ -->
+  <!-- Le contenu réel est chargé par /js/google-reviews.js depuis l'API GMB du
+       partenaire (data-domain=platrier-plaquiste-rillieuxlapape69.fr). AUCUN avis hardcodé : si l'API
+       est down, on affiche un état dégradé neutre (pas de fake testimonials). -->
   <section id="avis" class="avis-section" aria-labelledby="avis-title">
     <div class="container">
-      <div class="centered"><span class="section-tag reveal">Témoignages</span></div>
-      <h2 id="avis-title" class="section-title centered reveal">Ce que disent nos clients</h2>
-      <div class="avis-header-row reveal">
-        <div>
-          <div class="avis-stars">
-            <svg viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      <div class="centered"><span class="section-tag reveal">Avis clients</span></div>
+      <h2 id="avis-title" class="section-title centered reveal">Ils nous font confiance</h2>
+      <p class="section-intro reveal">Avis authentiques publiés par nos clients sur Google.</p>
+
+      <!-- Bloc widget Google reviews — chargé dynamiquement par js/google-reviews.js -->
+      <div data-widget="google-reviews" data-domain="platrier-plaquiste-rillieuxlapape69.fr" class="reveal">
+        <div id="reviews-summary" style="text-align:center;margin-bottom:2rem;">
+          <div style="display:inline-flex;align-items:center;gap:.5rem;">
+            <svg viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="1" width="28" height="28">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+            <span id="reviews-rating" style="font-size:1.5rem;font-weight:700;">—</span>
+            <span id="reviews-count" style="opacity:.75;">Chargement…</span>
           </div>
-          <p class="avis-note">5/5 sur la base de 50+ avis Google</p>
         </div>
+        <div id="reviews-carousel" class="avis-carousel"></div>
+        <noscript>
+          <p style="text-align:center;opacity:.7;">Activez JavaScript pour voir nos avis Google.</p>
+        </noscript>
       </div>
-      <div class="avis-grid">
-        <div class="avis-card reveal">
-          <div class="avis-card-quote">"</div>
-          <p class="avis-card-text">Intervention rapide, très bon contact et chantier propre. Je recommande vivement.</p>
-          <div class="avis-card-bottom">
-            <div class="avis-avatar">MD</div>
-            <div><div class="avis-card-author">Marie D.</div><div class="avis-card-meta">Rillieux-la-Pape • Dépannage</div></div>
-          </div>
-        </div>
-        <div class="avis-card reveal">
-          <div class="avis-card-quote">"</div>
-          <p class="avis-card-text">Devis clair, délais respectés et résultat impeccable. Artisan sérieux et professionnel.</p>
-          <div class="avis-card-bottom">
-            <div class="avis-avatar">JP</div>
-            <div><div class="avis-card-author">Julien P.</div><div class="avis-card-meta">Rillieux-la-Pape • Installation</div></div>
-          </div>
-        </div>
-        <div class="avis-card reveal">
-          <div class="avis-card-quote">"</div>
-          <p class="avis-card-text">Professionnel, réactif et sérieux du début à la fin. Merci pour le travail de qualité.</p>
-          <div class="avis-card-bottom">
-            <div class="avis-avatar">SL</div>
-            <div><div class="avis-card-author">Sophie L.</div><div class="avis-card-meta">Rillieux-la-Pape • Entretien</div></div>
-          </div>
-        </div>
+
+      <div class="avis-nav reveal">
+        <button id="avis-prev" aria-label="Avis précédent">‹</button>
+        <button id="avis-next" aria-label="Avis suivant">›</button>
       </div>
     </div>
   </section>
@@ -316,7 +306,7 @@
             <div class="zone-list-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Villeurbanne</div>
             <div class="zone-list-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Vénissieux</div>
           </div>
-          <a href="#contact" class="btn btn-orange">Demander un devis</a>
+          <a href="/contact" class="btn btn-orange">Demander un devis</a>
         </div>
       </div>
     </div>
@@ -349,7 +339,7 @@
           <div class="c-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg><div class="c-item-text">Tél : <a href="tel:+33214739691">02 14 73 96 91</a></div></div>
           <div class="c-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><div class="c-item-text">Email : <a href="mailto:contact@platrier-plaquiste-rillieuxlapape69.fr">contact@platrier-plaquiste-rillieuxlapape69.fr</a></div></div>
           <div class="c-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><div class="c-item-text">9 rue de Bruxelles<br>69140 Rillieux-la-Pape</div></div>
-          <div class="c-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><div class="c-item-text">Lun – Ven : 8h – 18h</div></div>
+          <div class="c-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><div class="c-item-text">Du lundi au samedi : 08h – 19h<br>Dimanche : Fermé</div></div>
         </div>
         <form class="contact-form reveal" action="https://slcksfqbsbcmvqupbhox.supabase.co/functions/v1/partner-site-lead-submit?source=platrier_plaquiste" method="POST" aria-label="Formulaire de devis" data-contact-form>
           <input type="hidden" name="_client_id" value="7c410bd9-3c48-4bab-83da-6658a62037fa">
@@ -367,7 +357,11 @@
     </div>
   </section>
 
-  <!-- ══ FOOTER ══ -->
+  <!-- ══ FOOTER ══ RULES_TOM #17-20 -->
+  <!-- Bloc 1 Coordonnées : NAP + tel Twilio + mailto cliquable
+       Bloc 2 Services    : 5 services individuels (page dédiée chacun)
+       Bloc 3 Le site     : pages institutionnelles
+       Bloc 4 Zones       : 6 villes top + CTA /zone-intervention -->
   <footer role="contentinfo">
     <div class="container">
       <div class="footer-grid">
@@ -376,26 +370,48 @@
             <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
             <span class="logo-name">GFB BATIMENT</span>
           </div>
-          <p class="footer-nap">GFB BATIMENT<br>9 rue de Bruxelles<br>69140 Rillieux-la-Pape</p>
+          <h4>Coordonnées</h4>
+          <p class="footer-nap"><strong>GFB BATIMENT</strong><br>9 rue de Bruxelles<br>69140 Rillieux-la-Pape</p>
           <p class="footer-nap"><a href="tel:+33214739691">02 14 73 96 91</a><br><a href="mailto:contact@platrier-plaquiste-rillieuxlapape69.fr">contact@platrier-plaquiste-rillieuxlapape69.fr</a></p>
+          <p class="footer-nap" style="opacity:.85;">Du lundi au samedi : 08h – 19h<br>Dimanche : Fermé</p>
         </div>
         <div class="footer-col">
-          <h4>Services</h4>
-          <ul><li><a href="/prestations">Dépannage</a></li><li><a href="/prestations">Installation</a></li><li><a href="/prestations">Entretien</a></li></ul>
+          <h4>Nos services</h4>
+          <ul>
+            <li><a href="/pose-placo">Pose Placo</a></li>
+            <li><a href="/platrerie-traditionnelle">Platrerie Traditionnelle</a></li>
+            <li><a href="/faux-plafond">Faux Plafond</a></li>
+            <li><a href="/cloison">Cloison</a></li>
+            <li><a href="/isolation-acoustique">Isolation Acoustique</a></li>
+          </ul>
         </div>
         <div class="footer-col">
-          <h4>Informations</h4>
-          <ul><li><a href="/a-propos">À propos</a></li><li><a href="/contact">Avis clients</a></li><li><a href="/realisations">Réalisations</a></li><li><a href="#contact">Contact & devis</a></li></ul>
+          <h4>Le site</h4>
+          <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/prestations">Toutes nos prestations</a></li>
+            <li><a href="/realisations">Réalisations</a></li>
+            <li><a href="/avis">Avis Google</a></li>
+            <li><a href="/a-propos">À propos</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
         </div>
         <div class="footer-col">
-          <h4>Zone d'intervention</h4>
-          <p class="footer-zone-text">Nous intervenons à Rillieux-la-Pape, Lyon, Villeurbanne, Vénissieux et communes environnantes.</p>
-          <a href="#zone" class="footer-zone-link">Voir toutes nos zones <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 6 15 12 9 18"/></svg></a>
+          <h4>Zones d'intervention</h4>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+          <a href="/zone-intervention" class="footer-zone-link">Voir les  communes <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 6 15 12 9 18"/></svg></a>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© GFB BATIMENT — Tous droits réservés — Artisan à Rillieux-la-Pape — Site propulsé par <a href="https://atlinker.com" target="_blank" rel="noopener">atlinker</a></span>
-        <div class="footer-legal"><a href="plan-du-site.html">Plan du site</a><span>•</span><a href="mentions-legales.html">Mentions légales</a><span>•</span><a href="politique-confidentialite.html">Politique de confidentialité</a></div>
+        <span>© GFB BATIMENT — Tous droits réservés — Artisan Plâtrier-plaquiste à Rillieux-la-Pape — Site propulsé par <a href="https://atlinker.com" target="_blank" rel="noopener">atlinker</a></span>
+        <div class="footer-legal"><a href="/plan-du-site">Plan du site</a><span>•</span><a href="/mentions-legales">Mentions légales</a><span>•</span><a href="/politique-confidentialite">Politique de confidentialité</a></div>
       </div>
     </div>
   </footer>
@@ -404,7 +420,7 @@
   <div class="mobile-cta-bar" aria-label="Actions rapides">
     <div class="mobile-cta-buttons">
       <a href="tel:+33214739691" class="mobile-cta-call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>Appeler</a>
-      <a href="#contact" class="mobile-cta-devis"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Devis gratuit</a>
+      <a href="/contact" class="mobile-cta-devis"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Devis gratuit</a>
     </div>
   </div>
 
@@ -424,5 +440,6 @@
     document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',()=>{const a=btn.nextElementSibling;const open=a.classList.contains('open');document.querySelectorAll('.faq-a.open').forEach(el=>{el.classList.remove('open');el.previousElementSibling.classList.remove('open');el.previousElementSibling.setAttribute('aria-expanded','false')});if(!open){a.classList.add('open');btn.classList.add('open');btn.setAttribute('aria-expanded','true')}})});
   </script>
   <script src="/js/contact-form.js" defer></script>
+  <script src="/js/google-reviews.js" defer></script>
 </body>
 </html>
